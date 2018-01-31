@@ -1,0 +1,9 @@
+C:\Users\cinde\source\repos\testing\testing\bin\testing.dll.config
+C:\Users\cinde\source\repos\testing\testing\bin\testing.dll
+C:\Users\cinde\source\repos\testing\testing\bin\testing.pdb
+C:\Users\cinde\source\repos\testing\testing\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cinde\source\repos\testing\testing\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cinde\source\repos\testing\testing\obj\Debug\testing.csprojResolveAssemblyReference.cache
+C:\Users\cinde\source\repos\testing\testing\obj\Debug\testing.csproj.CoreCompileInputs.cache
+C:\Users\cinde\source\repos\testing\testing\obj\Debug\testing.dll
+C:\Users\cinde\source\repos\testing\testing\obj\Debug\testing.pdb

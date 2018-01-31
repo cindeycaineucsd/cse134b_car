@@ -1,0 +1,47 @@
+﻿body
+{
+    margin:0;
+}
+h1 {
+    margin: 0;
+    display: inline-block;
+}
+button {
+   
+    float:right;
+}
+
+#header {
+    margin:0;
+    background-color: slategray;
+    padding:40px;
+    
+}
+
+.carImage {
+    width:400px;
+    border: black 4px solid;
+}
+.car {
+    
+    display: inline-block;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+.carDiscription {
+    float: right
+}
+
+#body {
+    background-color:lightgray;
+    padding: 0px 100px;
+    margin: 0px 200px;
+    bottom: 0;
+    position: absolute;
+    top: 40px;
+    clear: left;
+}
