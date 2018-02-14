@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #eee;
+}
+
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.space-40 {
+    padding: 40px;
+}
+
+.header {
+    background-color: #c8dd88;
+    position: fixed;
+    width: 100%;
+    padding: 12px 32px;
+    top: 0px;
+}
+
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 0px 5px;
+}
+
+.header-button {
+    float: right;  
+}
+
+.logo {
+    height: 32px;
+}
+
+.car {
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 12px;
+    margin: 12px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.car_image {
+    max-width: 400px;
+    width: 94%;
+}
+
+.car_discription {
+    margin: 0px 0px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.name {
+	margin-left: 50px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input[type=radio] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+}
+
+.logincontainer {
+    padding: 16px;
+}
+
+.logincontainer-button {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(5,5,2,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.closecontainer {
+    margin: 12px 0 12px 0;
+    position: relative;
+}
+
+.span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        cursor: pointer;
+    }
+
+.animate {
+    -webkit-animation: animation 0.5s;
+    animation: animatezoom 0.5s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+.chatbox {
+    border: 2px solid #dedsede;
+    background-color: #fefefe;
+    padding: 8px 10px 45px 10px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    height: 100%;
+    bottom: 0px;
+    position: relative;
+}
+
+.chatboxinner {
+}
+
+.chatentry {
+    border: 2px solid #dedede;
+    padding: 0px;
+    margin: 8px 0px;
+    width: 100%;
+}
+
+.chatcontainer {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.chatcontainer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+
+.chatentry input[type=text] {
+    padding: 6px;
+    margin-top: 5px;
+    font-size: 17px;
+    border: none;
+}
+
+.chat-actions {
+    position: absolute;
+    right: 0px;
+    padding-right: 5px;
+}
+
+
+
+/*calendar css*/
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.calendar {
+	float:left;
+	width:330px;
+	margin-left: 50px;
+
+}
+
+.month {
+    padding: 25px 25px;
+    background: #c8dd88;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 12.8%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12.8%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+.dates {
+	float: left;
+	height: 300px;
+	overflow: scroll;
+	padding: 6px;
+	margin: 0px 50px;
+	background-color: #ddd;
+}
+
+
+
+.avtable {
+	border-bottom: 2px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+	clear:left;
+	float:right;
+}
+
+th, td {
+	border-collapse: collapse;
+	border-bottom: 2px solid #666;
+	border-top: 2px solid #666;
+	padding: 30px;
+	color: #666;
+}
+
+.title {
+	text-align: center;
+	padding: 10px;
+	margin: 0px;
+	color: #666;
+}
+
+.name {
+	color: #666;
+}
+
+.confirm {
+	vertical-align: bottom;
+	float: bottom;
+}
