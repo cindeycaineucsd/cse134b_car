@@ -20,19 +20,7 @@
     </div>
     <div class="space-40"></div>
 
-    <a href="index.html">
-        <div class="car">
-            <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
-            <div class="car_discription">
-                <h3>Prius 2</h3>
-                <p>
-                    Color:Red
-                    <br>Maker:Toyota
-                </p>
-            </div>
-        </div>
-    </a>
-    <div class="car">
+    <div class="car" onclick="document.getElementById('car_details').style.display='block'">
         <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
         <div class="car_discription">
             <h3>Prius 2</h3>
@@ -42,7 +30,18 @@
             </p>
         </div>
     </div>
-    <div class="car">
+
+    <div class="car" onclick="document.getElementById('car_details').style.display='block'">
+        <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
+        <div class="car_discription">
+            <h3>Prius 2</h3>
+            <p>
+                Color:Red
+                <br>Maker:Toyota
+            </p>
+        </div>
+    </div>
+    <div class="car" onclick="document.getElementById('car_details').style.display='block'">
         <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
         <div class="car_discription">
             <h3>Prius 2</h3>
@@ -77,33 +76,166 @@
                     <input type="radio" name="usertype" value="seller" /> Seller <br />
                 </div>
 
-                <div><button  class="action-button logincontainer-button" type="submit">Sign Up</button></div>
+                <div><button class="action-button logincontainer-button" type="submit">Sign Up</button></div>
 
             </div>
         </form>
     </div>
 
     <div id="login" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-content animate" action="/action_page.php">
             <div class="closecontainer">
                 <span onclick="document.getElementById('login').style.display='none'"
                       class="close" title="Close">&times;</span>
             </div>
             <div class="logincontainer">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required />
+                <input id="login_username" type="text" placeholder="Enter Username" name="username" required />
 
                 <label><b>Password</b></label>
-                <input type="text" placeholder="Enter Password" name="password" required />
+                <input id="login_password" type="text" placeholder="Enter Password" name="password" required />
 
                 <div>
-                    <button class="action-button logincontainer-button" type="submit">Log In</button>
-                    <button class="action-button logincontainer-button" type="submit">Forgot Password</button>
+                    <button class="action-button logincontainer-button"  onclick="login_user()">Log In</button>
+                    <button class="action-button logincontainer-button" >Forgot Password</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="car_details" class="carpopup">
+        <form class="carpopup-content animate" action="/action_page.php">
+            <div class="carpopup_imgcontainer">
+                <span onclick="document.getElementById('car_details').style.display='none'"
+                      class="close" title="Close">&times;</span>
+                <img class="carpopup_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius" width="80%">
+            </div>
+
+            <div class="logincontainer">
+                <div class="car_description_1 car_description_padding">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>make:</b>
+                                </td>
+                                <td>
+                                    Toyota
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>model:</b>
+                                </td>
+                                <td>
+                                    Prius
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>year:</b>
+                                </td>
+                                <td>
+                                    2005
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>mileage:</b>
+                                </td>
+                                <td>
+                                    80,000
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="car_description_1 car_description_padding">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>Transmission:</b>
+                                </td>
+                                <td>
+                                    Automatic
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Color:</b>
+                                </td>
+                                <td>
+                                    Red
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Title Status:</b>
+                                </td>
+                                <td>
+                                    Clean
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="car_description_1 car_description_padding">
+                    <b>Description:</b><br>
+                    Great car for a great value.
+                </div>
+                <div class="car_description_1 car_description_padding">
+                    <b>Price:</b> $8,000
+                </div>
+                <div>
+                    <button class="action-button logincontainer-button"
+                            onclick="alert('You must be logged in to do this.')">
+                    Contact Seller
+                    </button>
                 </div>
 
             </div>
         </form>
     </div>
+
+    <script>
+        var login = document.getElementById('login');
+        var signup = document.getElementById('sign-up');
+        var cardetails = document.getElementById('car_details');
+
+        window.onclick = function (event) {
+            if (event.target == login) {
+                login.style.display = "none";
+            }
+            if (event.target == signup) {
+                signup.style.display = "none";
+            }
+            if (event.target == cardetails) {
+                cardetails.style.display = "none";
+            }
+        }
+
+        function login_user() {
+            var username = document.getElementById('login_username');
+            var password = document.getElementById('login_password');
+
+
+            if (username.value == "") {
+                alert("Must enter a username.")
+            }
+            else if (password.vale == "") {
+                alert("Must enter a username.")
+            }
+            else if (username.value == "buyer") {
+                console.log(window.location);
+                window.location.href = "chat.html";
+            }
+        }
+
+    </script>
 
 </body>
 

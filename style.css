@@ -113,6 +113,8 @@ button:hover {
 .negotiation_buttons {
     margin: auto 0;
     width: 100%;
+    justify-content: center;
+    display: flex;
 }
 
 input[type=text], input[type=password] {
@@ -159,6 +161,41 @@ input[type=radio] {
     width: 80%;
 }
 
+.carpopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(5,5,2);
+    background-color: rgba(5,5,2,0.4);
+    padding-top: 60px;
+}
+
+.carpopup_imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.carpopup-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    margin: 5% auto 15% auto;
+    width: 80%;
+}
+
+.carpopup_detail {
+    margin: 5% auto 15% auto;
+    vertical-align: top;
+    display: inline-block;
+    width: 20%;
+}
+
+
 .closecontainer {
     margin: 12px 0 12px 0;
     position: relative;
@@ -197,6 +234,11 @@ input[type=radio] {
     height: 100%;
     bottom: 0;
     position: relative;
+}
+
+.chatboxinner{
+    height: 400px;
+    overflow: auto;
 }
 
 .chatentry {
@@ -242,6 +284,7 @@ input[type=radio] {
     margin-top: 5px;
     font-size: 17px;
     border: none;
+    box-shadow: none;
 }
 
 .chat-actions {
@@ -299,7 +342,7 @@ input[type=text] {
 }
 
 .payment_option {
-    background-color: #ddd;
+    background-color: #fefefe;
     height: 800px;
     margin: auto;
     padding: 10px;
@@ -339,6 +382,10 @@ input[type=text] {
     width: 150px;
     height: 50px;
     font-size: 25px;
+}
+
+.car_description_padding {
+    padding: 20px;
 }
 
 @media screen and (max-width: 1250px) {

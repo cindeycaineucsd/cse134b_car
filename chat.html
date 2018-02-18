@@ -10,44 +10,188 @@
         <a href="index.html">
             <img class="logo" src="car_logo.png" alt="logo">
         </a>
-            <button class="action-button header-button">
-                Logout
-            </button>
+        <button class="action-button header-button" onclick="document.location.href='index.html'">
+            Logout
+        </button>
     </div>
     <div class="space-40"></div>
 
     <div class="chatbox">
-        <div class="chatboxinner">
-            <div class="chatcontainer">
-            <p>Hello. I'm John Smith, the car salesman. How can I help you today?</p>
-            <span class="time-right">11:00</span>
+        <div id="chat" class="chatboxinner"></div>
+
+        <div class="chatentry">
+            <input id="textentry" type="text" placeholder="Enter your message" name="username"
+                   onkeydown="console.log('key'); if (event.keyCode == 13) { sendMessage(); }" />
+        </div>
+        <div class="chat-actions">
+            <button class="action-button" onclick="enterPrice()">Propose Price</button>
+            <button class="action-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div id="selectprice" class="modal">
+        <div class="modal-content animate" action="/action_page.php">
+            <div class="closecontainer">
+                <span onclick="document.getElementById('selectprice').style.display='none'"
+                      class="close" title="Close">&times;</span>
+            </div>
+            <div class="logincontainer">
+                <input id="price" type="text" placeholder="Enter your proposed price." name="price" required />
+                <div>
+                    <button class="action-button logincontainer-button" onclick="sendPrice()">Propose Price</button>
+                </div>
+
             </div>
         </div>
-
-            <div class="chatcontainer darker">
-                <p>Hi John, I'd like to know more about your Toyota Prius. Does is have a backup camera?</p>
-                <span class="time-left">11:01</span>
-            </div>
-
-            <div class="chatcontainer">
-                <p>Yes it does, as well as a lane departure warning system. These features are all standard in the premium trim.</p>
-                <span class="time-right">11:02</span>
-            </div>
-
-            <div class="chatcontainer darker">
-                <p>Great! Let's talk about price.</p>
-                <span class="time-left">11:05</span>
-            </div>
-
-            <div class="chatentry">
-                <input type="text" placeholder="Enter your message" name="username" />
-            </div>
-            <div class="chat-actions">
-                <button class="action-button">Propose Price</button>
-                <button class="action-button">Send</button>
-            </div>
     </div>
+
+    <script>
+        var numPrices = 0;
+        var numMessages = 0;
+        var price = document.getElementById('selectprice');
+
+        window.onclick = function (event) {
+            if (event.target == price) {
+                price.style.display = "none";
+            }
+        }
+
+        function enterPrice() {
+            document.getElementById('selectprice').style.display = 'block';
+        }
+
+        function sendMessage() {
+            var chat = document.getElementById("chat");
+            var textentry = document.getElementById("textentry");
+
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours == 0) {
+                hours = 12;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            if (textentry.value != "") {
+                var div = document.createElement('div');
+                div.className = 'chatcontainer'
+                div.innerHTML = "<p>" + textentry.value + "</p><span class='time-left'>" + hours + ":" + minutes + "</span>";
+                textentry.value = '';
+                chat.appendChild(div);
+            }
+            chat.scrollTop = chat.scrollHeight;
+
+            if (chat.childNodes.length % 2 != 0) {
+                if (chat.childNodes.length == 5) {
+                    setTimeout(roboPrice, 1500);
+                } else {
+                    setTimeout(roboText, 1500);
+                }
+            }
+            if (chat.childNodes.length == 7) {
+                setTimeout(roboPrice, 1500);
+            }
+        }
+
+        function roboText() {
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours == 0) {
+                hours = 12;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            var div = document.createElement('div');
+            div.className = 'chatcontainer darker'
+            div.innerHTML = "<p>robot response</p><span class='time-right'>" + hours + ":" + minutes + "</span>";
+            textentry.value = '';
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function roboPrice() {
+            var chat = document.getElementById("chat");
+
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours == 0) {
+                hours = 12;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            var div = document.createElement('div');
+            div.className = 'chatcontainer darker'
+            var thisPrice = "price" + numPrices;
+            div.id = thisPrice;
+            numPrices += 1;
+            var message = '<div class="negotiation_message"><h4>Proposed price: $8000' + '</h4></div>';
+            var onClick = "'document.location.href" + '="payment.html"' + "'";
+            var acceptButton = "<button class='action-button' onClick=" + onClick + ">Accept</button>";
+            console.log(acceptButton);
+            onClick = "'removePrice(" + '"' + thisPrice + '"' + ")'";
+            var declineButton = "<button class='action-button' onClick=" + onClick + ">Decline</button>";
+            console.log(declineButton);
+            var buttons = "<div class='negotiation_buttons'>" + acceptButton + declineButton + "</div>";
+            div.innerHTML = message + buttons + "<span class='time-left'>" + hours + ":" + minutes + "</span>";
+            chat.appendChild(div);
+            console.log(div);
+
+
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function removePrice(id) {
+            console.log(id);
+            var price = document.getElementById(id);
+            console.log(price);
+            price.parentNode.removeChild(price);
+        }
+
+        function sendPrice() {
+            var chat = document.getElementById("chat");
+
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours == 0) {
+                hours = 12;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            price = document.getElementById('price').value;
+            if (price != '') {
+                if (isNaN(price)) {
+                    alert("Price must be a number.")
+                } else {
+                    var div = document.createElement('div');
+                    div.className = 'chatcontainer'
+                    var thisPrice = "price" + numPrices;
+                    div.id = thisPrice;
+                    numPrices += 1;
+                    var message = '<div class="negotiation_message"><h4>Proposed price: $' + document.getElementById('price').value + '</h4></div>'
+                    var buttons = "<div class='negotiation_buttons'><button class='action-button'>Accept</button><button class='action-button'>Decline</button></div>"
+                    div.innerHTML = message + buttons + "<span class='time-left'>" + hours + ":" + minutes + "</span>";
+                    chat.appendChild(div);
+                    document.getElementById('selectprice').style.display = 'none';
+                    document.getElementById('price').value = '';
+                }
+            }
+
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
+
 </body>
+
 
 
 
