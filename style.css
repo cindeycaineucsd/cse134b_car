@@ -288,6 +288,11 @@ input[type=radio] {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.car_detailed {
+    max-width: 550px;
+    margin: auto;
+    padding: 10px;
+}
 input[type=text] {
     box-shadow: inset -10px 10px 8px -10px #CCC, inset 10px -10px 8px -10px #CCC;
 }

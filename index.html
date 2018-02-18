@@ -20,7 +20,7 @@
     </div>
     <div class="space-40"></div>
 
-    <a href="index.html">
+    <a href="#" onclick="document.getElementById('view_car').style.display='block'">
         <div class="car">
             <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
             <div class="car_discription">
@@ -32,27 +32,30 @@
             </div>
         </div>
     </a>
-    <div class="car">
-        <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
-        <div class="car_discription">
-            <h3>Prius 2</h3>
-            <p>
-                Color:Red
-                <br>Maker:Toyota
-            </p>
+    <a href="#" onclick="document.getElementById('view_car').style.display='block'">
+        <div class="car">
+            <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
+            <div class="car_discription">
+                <h3>Prius 2</h3>
+                <p>
+                    Color:Red
+                    <br>Maker:Toyota
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="car">
-        <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
-        <div class="car_discription">
-            <h3>Prius 2</h3>
-            <p>
-                Color:Red
-                <br>Maker:Toyota
-            </p>
+    </a>
+    <a href="#" onclick="document.getElementById('view_car').style.display='block'">
+        <div class="car">
+            <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
+            <div class="car_discription">
+                <h3>Prius 2</h3>
+                <p>
+                    Color:Red
+                    <br>Maker:Toyota
+                </p>
+            </div>
         </div>
-    </div>
-
+    </a>
     <div id="sign-up" class="modal">
         <form class="modal-content animate" action="/action_page.php">
             <div class="closecontainer">
@@ -101,6 +104,59 @@
                     <button class="action-button logincontainer-button" type="submit">Forgot Password</button>
                 </div>
 
+            </div>
+        </form>
+    </div>
+
+    <div id="view_car" class="modal" style="display:none">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="closecontainer">
+                <span onclick="document.getElementById('view_car').style.display='none'"
+                      class="close" title="Close">&times;</span>
+            </div>
+
+            <div class="car_detailed">
+                <h1>Car Details</h1>
+                <img class="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius">
+                <div class="car_description_0">
+                    <div class="car_description_1">
+                        <h3>prius</h3>
+                        <p>
+                            make:<br>
+                            <input type="text" name="make" value="Toyota" disabled="disabled"><br>
+                            model:<br>
+                            <input type="text" name="model" value="Prius" disabled="disabled"><br>
+                            year:<br>
+                            <input type="text" name="year" value="2005" disabled="disabled"><br>
+                            mileage:<br>
+                            <input type="text" name="mileage" value="80,000" disabled="disabled">
+                        </p>
+                    </div>
+
+                    <div class="car_description_2">
+
+                        <p>
+                            Transmission:<br>
+                            <input type="text" name="Transmission" value="Automatic" disabled="disabled"><br>
+                            color:<br>
+                            <input type="text" name="Color" value="Red" disabled="disabled"><br>
+                            Title Status:<br>
+                            <input type="text" name="Title Status" value="Clean" disabled="disabled"><br>
+                        </p>
+                        <br>
+                    </div>
+                </div>
+                <div class="car_description_0">
+                    <div class="car_description_3">
+                        Description:<br>
+                        <textarea id="descr" name="Description" rows="5" cols="50" disabled="disabled">Great car for a great value.</textarea>
+                    </div>
+                    <div class="car_description_4">
+                        Price:<br>
+                        <input type="text" name="Price" value="$8,000" disabled="disabled"><br>
+                        <button type="button">Contact</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
