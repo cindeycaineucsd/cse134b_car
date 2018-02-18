@@ -52,33 +52,33 @@
         </div>
     </div>
     <div id="sign-up" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-content animate" action="/action_page.php">
             <div class="closecontainer">
                 <span onclick="document.getElementById('sign-up').style.display='none'"
                       class="close" title="Close">&times;</span>
             </div>
             <div class="logincontainer">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required />
+                <input id="signup_username" type="text" placeholder="Enter Username" name="username" required />
 
                 <label><b>Password</b></label>
-                <input type="text" placeholder="Enter Password" name="password" required />
+                <input  id="signup_password" type="text" placeholder="Enter Password" name="password" required />
 
                 <label><b>Confirm Password</b></label>
-                <input type="text" placeholder="Re-Enter Password" name="password_conf" required />
+                <input  id="signup_password2" type="text" placeholder="Re-Enter Password" name="password_conf" required />
 
                 <div>
                     <label><b>Select User Type</b></label>
                 </div>
                 <div>
-                    <input type="radio" name="usertype" value="buyer" /> Buyer <br />
-                    <input type="radio" name="usertype" value="seller" /> Seller <br />
+                    <input id="buyer_radio" type="radio" name="usertype" value="buyer" /> Buyer <br />
+                    <input id="seller_radio" type="radio" name="usertype" value="seller" /> Seller <br />
                 </div>
 
-                <div><button class="action-button logincontainer-button" type="submit">Sign Up</button></div>
+                <div><button class="action-button logincontainer-button" type="submit" onclick="signup_user()">Sign Up</button></div>
 
             </div>
-        </form>
+        </div>
     </div>
 
     <div id="login" class="modal">
@@ -225,10 +225,43 @@
             if (username.value == "") {
                 alert("Must enter a username.")
             }
-            else if (password.vale == "") {
-                alert("Must enter a username.")
+            else if (password.value == "") {
+                alert("Must enter a password.")
             }
             else if (username.value == "buyer") {
+                console.log(window.location);
+                window.location.href = "chat.html";
+            }
+            else if (username.value == "seller") {
+                console.log(window.location);
+                window.location.href = "carSeller.html";
+            }
+        }
+
+        function signup_user() {
+            var username = document.getElementById('signup_username');
+            var password = document.getElementById('signup_password');
+            var password2 = document.getElementById('signup_password2');
+            var radioSeller = document.getElementById('seller_radio')
+            var radioBuyer = document.getElementById('buyer_radio')
+            console.log(radioBuyer);
+            console.log(radioSeller);
+
+
+            if (username.value == "") {
+                alert("Must enter a username.")
+            }
+            else if (password.value == "") {
+                alert("Must enter a password.")
+            }
+            else if (password.value != password2.value) {
+                alert("Passwords must match")
+            }
+            else if (radioSeller.checked) {
+                console.log(window.location);
+                window.location.href = "carSeller.html";
+            }
+            else{
                 console.log(window.location);
                 window.location.href = "chat.html";
             }
