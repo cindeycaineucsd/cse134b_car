@@ -342,19 +342,19 @@ input[type=text] {
 
 .payment_main {
     height: auto;
-    width: 970px;
     margin: auto;
+    padding: 10px;
+    display: flex;
 }
 
 .payment_option {
     background-color: #fefefe;
-    height: 800px;
+    height: 600px;
     margin: auto;
-    padding: 10px;
     display: inline-block;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 25px;
-    width: 320px;
+    font-size: 18px;
+    width: 30%;
     vertical-align: top;
     position: relative;
 }
@@ -393,15 +393,21 @@ input[type=text] {
     padding: 20px;
 }
 
+
 @media screen and (max-width: 1250px) {
     .car_detail {
         max-width: 450px;
     }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 600px) {
+    .payment_main{
+        display: block;
+    }
     .payment_option {
         display: block;
+        width: 80%;
         margin: 20px auto;
     }
 }
+

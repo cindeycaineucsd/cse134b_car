@@ -16,21 +16,27 @@
         </button>
     </div>
     <div class="space-40"></div>
-    <div id="main">
+
         <div class="payment_main">
             <div class="payment_option">
                 <h1>Buy</h1>
+                <div style="padding: 10px">
                 <p>Buy the car of the listed price. In the past, buying a gently used car was the best way to save money when purchasing a vehicle. A big reason behind this logic is that new cars depreciate considerably the moment they are taken home from the dealership.</p>
+                </div>
                 <div class="confirm_button">
                     <div class="center">
                         Price: $18,000
                     </div>
-                    <button type="button">Confirm</button>
+                    <div class="logincontainer">
+                        <button class="action-button logincontainer-button" onclick="congrats()">Confirm</button>
+                    </div>
                 </div>
             </div>
             <div class="payment_option">
                 <h1>Finance</h1>
+                <div style="padding: 10px">
                 <p>You might borrow money directly from a bank, finance company, or credit union. In your loan, you agree to pay the amount financed, plus a finance charge, over a period of time. Once you’re ready to buy a car from a dealer, you use this loan to pay for the car. </p>
+                </div>
                 <div class="confirm_button">
                     <div class="center">
                         Downpayment: <br>
@@ -51,12 +57,16 @@
                             <option value="30 Months">30 Months</option>
                         </select>
                     </div>
-                    <button type="button">Confirm</button>
+                    <div class="logincontainer">
+                        <button class="action-button logincontainer-button" onclick="congrats()">Confirm</button>
+                    </div>
                 </div>
             </div>
             <div class="payment_option">
                 <h1>Lease</h1>
+                <div style="padding: 10px; overflow: auto">
                 <p>Leasing a car could be more clearly described as long-term car rental. You pay a monthly price that allows you to “borrow" a brand new car for an extended period of time—typically around 36 months, though this number will vary based on your dealership. At the end of your lease, you will have the choice to either buy your car, for an amount specified in your lease agreement, or turn the vehicle in.</p>
+                </div>
                 <div class="confirm_button">
                     <div class="center">
                         Downpayment: <br>
@@ -77,10 +87,18 @@
                             <option value="30 Months">30 Months</option>
                         </select>
                     </div>
-                    <button type="button">Confirm</button>
-                </div>
+                    <div class="logincontainer">
+                        <button class="action-button logincontainer-button" onclick="congrats()">Confirm</button>
+                    </div>
             </div>
-        </div>
+
+     <script>
+    function congrats(){
+        document.location.href = "congratulations.html";
+    }
+     </script>
 </body>
+
+
 
 </html>
