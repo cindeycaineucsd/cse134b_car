@@ -10,12 +10,14 @@
                 var form_count = 2;
                 var init = false;
                 var curr_card;
+				var og_div;
 
                 function view_car(card_num) {
                     console.log(card_num);
                     if (!init) {
                         forms[0] = document.getElementById('car_form').cloneNode(true);
                         forms[1] = document.getElementById('car_form').cloneNode(true);
+						og_div = document.getElementById('og_car').cloneNode(true);
                         init = true;
                     }
                     var form = document.getElementById('car_form');
@@ -38,6 +40,7 @@
                     if (!init) {
                         forms[0] = document.getElementById('car_form').cloneNode(true);
                         forms[1] = document.getElementById('car_form').cloneNode(true);
+						og_div = document.getElementById('og_car').cloneNode(true);
                         init = true;
                     }
                     var car = document.getElementById('view_car');
@@ -61,6 +64,7 @@
                     if (!init) {
                         forms[0] = document.getElementById('car_form').cloneNode(true);
                         forms[1] = document.getElementById('car_form').cloneNode(true);
+						og_div = document.getElementById('og_car').cloneNode(true);
                         init = true;
                     }
 
@@ -82,16 +86,33 @@
                     document.getElementById('card_button').setAttribute("onclick", "edit_car_card(" + card_num + ")");
                     car.style.display='block';
                 }
+				
+				function delete_car(card_num) {
+                    if (!init) {
+                        forms[0] = document.getElementById('car_form').cloneNode(true);
+                        forms[1] = document.getElementById('car_form').cloneNode(true);
+						og_div = document.getElementById('og_car').cloneNode(true);
+                        init = true;
+                    }
+					var cars = document.getElementsByClassName('car');
+					for (var i = 0; i < cars.length; i++) {
+						if (((cars[i].getElementsByTagName("h1"))[0]).innerHTML == ("" + card_num)) {
+							cars[i].remove();
+							return;
+						}
+					}
+				}
 
                 function add_car_card(card_num) {
                     console.log(card_num);
-                    newDiv = document.getElementById('og_car').cloneNode(true);
                     var form = document.getElementById('car_form').cloneNode(true);
+					newDiv = og_div.cloneNode(true);
                     forms[card_num] = form;
                     
                     newDiv.getElementsByTagName("button")[0].setAttribute("onclick", "edit_car(" + card_num + ")");
                     newDiv.getElementsByTagName("button")[1].setAttribute("onclick", "view_car(" + card_num + ")");
-                    newDiv.getElementsByClassName("car_discription")[0].innerHTML = "<h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
+                    newDiv.getElementsByTagName("button")[2].setAttribute("onclick", "delete_car(" + card_num + ")");
+                    newDiv.getElementsByClassName("car_discription")[0].innerHTML = "<h1 hidden>" + card_num + "</h1><h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
                     document.getElementsByTagName("body")[0].appendChild(newDiv);
                     form_count = form_count + 1;
                     document.getElementById('uniq_add').setAttribute("onclick", "add_car(" + form_count + ")");
@@ -103,9 +124,9 @@
                     var form = document.getElementById('car_form').cloneNode(true);
                     forms[card_num] = form;
                     var card = document.getElementsByClassName('car')[card_num];
-                    card.getElementsByClassName("car_discription")[0].innerHTML = "<h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
+					newDiv.getElementsByClassName("car_discription")[0].innerHTML = "<h1 hidden>" + card_num + "/h1><h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
                     document.getElementById('view_car').style.display='none';
-                }
+				}
                   
         </script>
 
@@ -132,7 +153,8 @@
             </a>
 
             <div class="car_discription">
-                <h3>Toyota Prius</h3>
+                <h1 hidden>0</h1>
+				<h3>Toyota Prius</h3>
                 <p>
                 Year: 2005
                 <br>Mileage: 80,000
@@ -142,6 +164,7 @@
             <div class ="info">
                 <button  class="action-button car-button" type="button" onclick="edit_car(0)">Edit</button>
                 <button  class="action-button car-button" type="button" onclick="view_car(0)">Details</button>
+                <button  class="action-button car-button" type="button" onclick="delete_car(0)">Delete</button>
             </div>
         </div>
 
@@ -152,6 +175,7 @@
             </a>
 
             <div class="car_discription">
+                <h1 hidden>1</h1>
                 <h3>Toyota Prius</h3>
                 <p>
                 Year: 2005
@@ -162,6 +186,7 @@
             <div class ="info">
                 <button  class="action-button car-button" type="button" onclick="edit_car(1)">Edit</button>
                 <button  class="action-button car-button" type="button" onclick="view_car(1)">Details</button>
+                <button  class="action-button car-button" type="button" onclick="delete_car(1)">Delete</button>
             </div>
         </div>
 
