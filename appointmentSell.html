@@ -4,6 +4,71 @@
     <meta charset="utf-8" />
     <title>Car-2-Go!</title>
     <link rel="stylesheet" href="calendar.css">
+	
+	<script>
+		function confirmed() {
+			document.getElementById('confirmed').style.display='block';
+		}
+		
+		function myFunction() {
+			document.getElementById("noteDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+		
+		// Search functions
+
+
+function filterFunction() {
+	document.getElementById("mysearch").classList.toggle("searchshow");
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("mysearch");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+// Notification functions
+
+		function myFunction() {
+			document.getElementById("noteDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -11,9 +76,48 @@
         <a href="index.html">
             <img class="logo" src="car_logo.png" alt="logo">
         </a>
-        <button class="action-button header-button" onclick="document.getElementById('login').style.display='block'">
-            Profile
+		
+		
+		<div class="search">
+			<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+			<div id="mysearch" class="search-content">
+				<a href="index.html">Home</a>
+				<a href="appointmentBuy.html">Appointments</a>
+				<a href="#blog">Blog</a>
+				<a href="#contact">Contact</a>
+				<a href="#custom">Custom</a>
+				<a href="#support">Support</a>
+				<a href="#tools">Tools</a>
+			</div>
+		</div>
+		
+		<button class="action-button header-button" onclick="document.getElementById('login').style.display='block'">
+            Logout
         </button>
+		
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn action-button">Notifications</button>
+			<div id="noteDropdown" class="dropdown-content">
+				<b>New</b>
+				<a href="chat.html">
+					<i class="fa fa-envelope-o" style="padding-left: 5px;"></i>
+					New Message
+				</a>
+				<b>Old</b>
+				<a href="appointmentBuy.html">
+					<i class="fa fa-calendar" style="padding-left: 5px;"></i>
+					Make Appointment
+				</a>
+				<a href="index.html">
+					<i class="fa fa-car" style="padding-left: 5px;"></i>
+					Choose a Car
+				</a>
+			</div>
+		</div>
+		
+		
+		
+		
   
     </div>
     <div class="space-40"></div>
@@ -44,37 +148,37 @@
             </ul>
 
             <ul class="days">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li>31</li>
+                <li id = "1" >1</li>
+                <li id = "2" >2</li>
+                <li id = "3" >3</li>
+                <li id = "4" >4</li>
+                <li id = "5" >5</li>
+                <li id = "6" >6</li>
+                <li id = "7" >7</li>
+                <li id = "8" >8</li>
+                <li id = "9" >9</li>
+                <li id = "10" >10</li>
+                <li id = "11" >11</li>
+                <li id = "12" >12</li>
+                <li id = "13" >13</li>
+                <li id = "14" >14</li>
+                <li id = "15" >15</li>
+                <li id = "16" >16</li>
+                <li id = "17" >17</li>
+                <li id = "18" >18</li>
+                <li id = "19" >19</li>
+                <li id = "20" >20</li>
+                <li id = "21" >21</li>
+                <li id = "22" >22</li>
+                <li id = "23" >23</li>
+                <li id = "24" >24</li>
+                <li id = "25" >25</li>
+                <li id = "26" >26</li>
+                <li id = "27" >27</li>
+                <li id = "28" >28</li>
+                <li id = "29" >29</li>
+                <li id = "30" >30</li>
+                <li id = "31" >31</li>
             </ul>
 			
 			<div class="confirm">
@@ -90,7 +194,7 @@
 					<th>1</th>
 					<th>			
 
-							<button type="button" class="action-button header-button">Choose</button>
+						<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -130,7 +234,7 @@
 					<th>10</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+						<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -149,7 +253,7 @@
 				<tr>
 					<th>14</th>
 					<th>
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -157,7 +261,7 @@
 					<th>15</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -169,7 +273,7 @@
 					<th>17</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -197,7 +301,7 @@
 					<th>23</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -209,7 +313,7 @@
 					<th>25</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -217,7 +321,7 @@
 					<th>26</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -229,7 +333,7 @@
 					<th>28</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -237,7 +341,7 @@
 					<th>29</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -249,7 +353,7 @@
 					<th>31</th>
 					<th>
 
-							<button type="button" class="action-button header-button">Choose</button>
+							<button type="button" class="action-button header-button" onclick="confirmed()">Choose</button>
 
 					</th>
 				</tr>
@@ -257,6 +361,24 @@
         </div>
 		
 
+    </div>
+	
+	
+	
+	<div id="confirmed" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="closecontainer">
+                <span onclick="document.getElementById('confirmed').style.display='none'"
+                      class="close" title="Close">&times;</span>
+            </div>
+            <div class="confirmedcontainer">
+				<label ><b id="thankyou">Thankyou for selecting a date.</b></label>
+                <div>
+                    <button class="action-button confirm-button" type="button" onclick="document.location.href = 'index.html'">Okay</button>
+                </div>
+
+            </div>
+        </form>
     </div>
 </body>
 

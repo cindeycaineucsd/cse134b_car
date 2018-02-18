@@ -51,6 +51,11 @@ button:hover {
     float: right;  
 }
 
+.confirm-button {
+	width: 20%;
+    margin: 10px 0px;
+}
+
 .logo {
     height: 32px;
 }
@@ -120,7 +125,13 @@ input[type=radio] {
     background-color: #fefefe;
     margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
+}
+
+.confirmedcontainer {
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:30px;
 }
 
 .closecontainer {
@@ -318,6 +329,7 @@ body {font-family: Verdana, sans-serif;}
 .dates {
 	float: left;
 	height: 300px;
+	width: 300px;
 	overflow: scroll;
 	padding: 6px;
 	margin: 0px 50px;
@@ -331,7 +343,7 @@ body {font-family: Verdana, sans-serif;}
 	border-collapse: collapse;
 	padding: 10px;
 	clear:left;
-	float:right;
+	text-align: center;
 }
 
 th, td {
@@ -357,3 +369,113 @@ th, td {
 	vertical-align: bottom;
 	float: bottom;
 }
+
+#thankyou {
+	margin: 20px;
+}
+
+/*HERE IS THE SEARCH CSS*/
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+	
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 10px 20px 8px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+	margin: 0;
+	
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.search {
+	margin: 0 5%;
+	width: 40%;
+    display: inline-block;
+}
+
+.search-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.search-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.search a:hover {background-color: #ddd}
+
+.searchshow {display:block;}
+
+/*CSS for notifications*/
+.dropbtn {	
+	background-color: #4CAF50;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 0px 5px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    opacity: 0.8;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 250px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+	padding: 5px 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}

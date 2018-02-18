@@ -4,6 +4,64 @@
     <meta charset="utf-8" />
     <title>Car-2-Go!</title>
     <link rel="stylesheet" href="calendar.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+function selectDay(clicked_id) {
+	document.getElementById(clicked_id).style.background = '#c8dd88';
+	console.log(clicked_id);
+	var x = document.getElementById("tableApt").insertRow(-1);
+	var y = x.insertCell(0);
+	
+	y.innerHTML = ("January " + clicked_id + " 2018");
+	
+}
+
+function confirmed() {
+	document.getElementById('confirmed').style.display='block';
+}
+
+// Search functions
+
+
+function filterFunction() {
+	document.getElementById("mysearch").classList.toggle("searchshow");
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("mysearch");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+// Notification functions
+
+		function myFunction() {
+			document.getElementById("noteDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+
+</script>
 </head>
 
 <body>
@@ -11,9 +69,46 @@
         <a href="index.html">
             <img class="logo" src="car_logo.png" alt="logo">
         </a>
+		
+		<div class="search">
+			<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+			<div id="mysearch" class="search-content">
+				<a href="index.html">Home</a>
+				<a href="appointmentBuy.html">Appointments</a>
+				<a href="#blog">Blog</a>
+				<a href="#contact">Contact</a>
+				<a href="#custom">Custom</a>
+				<a href="#support">Support</a>
+				<a href="#tools">Tools</a>
+			</div>
+		</div>
+		
+		
         <button class="action-button header-button" onclick="document.getElementById('login').style.display='block'">
-            Profile
+            Logout
         </button>
+		
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn action-button">Notifications</button>
+			<div id="noteDropdown" class="dropdown-content">
+				<b>New</b>
+				<a href="chat.html">
+					<i class="fa fa-envelope-o" style="padding-left: 5px;"></i>
+					New Message
+				</a>
+				<b>Old</b>
+				<a href="appointmentBuy.html">
+					<i class="fa fa-calendar" style="padding-left: 5px;"></i>
+					Make Appointment
+				</a>
+				<a href="index.html">
+					<i class="fa fa-car" style="padding-left: 5px;"></i>
+					Choose a Car
+				</a>
+			</div>
+		</div>
+		
+		
   
     </div>
 	
@@ -45,42 +140,42 @@
             </ul>
 
             <ul class="days">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li>31</li>
+                <li id = "1" onclick="selectDay(this.id)">1</li>
+                <li id = "2" onclick="selectDay(this.id)">2</li>
+                <li id = "3" onclick="selectDay(this.id)">3</li>
+                <li id = "4" onclick="selectDay(this.id)">4</li>
+                <li id = "5" onclick="selectDay(this.id)">5</li>
+                <li id = "6" onclick="selectDay(this.id)">6</li>
+                <li id = "7" onclick="selectDay(this.id)">7</li>
+                <li id = "8" onclick="selectDay(this.id)">8</li>
+                <li id = "9" onclick="selectDay(this.id)">9</li>
+                <li id = "10" onclick="selectDay(this.id)">10</li>
+                <li id = "11" onclick="selectDay(this.id)">11</li>
+                <li id = "12" onclick="selectDay(this.id)">12</li>
+                <li id = "13" onclick="selectDay(this.id)">13</li>
+                <li id = "14" onclick="selectDay(this.id)">14</li>
+                <li id = "15" onclick="selectDay(this.id)">15</li>
+                <li id = "16" onclick="selectDay(this.id)">16</li>
+                <li id = "17" onclick="selectDay(this.id)">17</li>
+                <li id = "18" onclick="selectDay(this.id)">18</li>
+                <li id = "19" onclick="selectDay(this.id)">19</li>
+                <li id = "20" onclick="selectDay(this.id)">20</li>
+                <li id = "21" onclick="selectDay(this.id)">21</li>
+                <li id = "22" onclick="selectDay(this.id)">22</li>
+                <li id = "23" onclick="selectDay(this.id)">23</li>
+                <li id = "24" onclick="selectDay(this.id)">24</li>
+                <li id = "25" onclick="selectDay(this.id)">25</li>
+                <li id = "26" onclick="selectDay(this.id)">26</li>
+                <li id = "27" onclick="selectDay(this.id)">27</li>
+                <li id = "28" onclick="selectDay(this.id)">28</li>
+                <li id = "29" onclick="selectDay(this.id)">29</li>
+                <li id = "30" onclick="selectDay(this.id)">30</li>
+                <li id = "31" onclick="selectDay(this.id)">31</li>
             </ul>
 			
 			<div class="confirm">
-
-            	<button type="button" class="action-button header-button">Confirm</button>
+				
+            	<button type="button" class="action-button header-button"onclick= "confirmed()">Confirm</button>
 			</div>
 
         </div>
@@ -88,166 +183,27 @@
 		
         <div class="dates">
 			<h3 class ="title"> Avalibility </h3>
-			<table class= "avtable">
-				<tr>
-					<th>1</th>
-					<th><input type="radio" name="avalible" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>2</th>
-					<th><input type="radio" name="avalible2" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible2" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>3</th>
-					<th><input type="radio" name="avalible3" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible3" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>4</th>
-					<th><input type="radio" name="avalible4" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible4" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>5</th>
-					<th><input type="radio" name="avalible5" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible5" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>6</th>
-					<th><input type="radio" name="avalible6" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible6" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>7</th>
-					<th><input type="radio" name="avalible7" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible7" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>8</th>
-					<th><input type="radio" name="avalible8" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible8" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>9</th>
-					<th><input type="radio" name="avalible9" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible9" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>10</th>
-					<th><input type="radio" name="avalible10" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible10" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>11</th>
-					<th><input type="radio" name="avalible11" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible11" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>12</th>
-					<th><input type="radio" name="avalible12" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible12" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>13</th>
-					<th><input type="radio" name="avalible13" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible13" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>14</th>
-					<th><input type="radio" name="avalible14" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible14" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>15</th>
-					<th><input type="radio" name="avalible15" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible15" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>16</th>
-					<th><input type="radio" name="avalible16" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible16" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>17</th>
-					<th><input type="radio" name="avalible17" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible17" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>18</th>
-					<th><input type="radio" name="avalible18" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible18" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>19</th>
-					<th><input type="radio" name="avalible19" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible19" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>20</th>
-					<th><input type="radio" name="avalible20" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible20" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>21</th>
-					<th><input type="radio" name="avalible21" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible21" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>22</th>
-					<th><input type="radio" name="avalible22" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible22" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>23</th>
-					<th><input type="radio" name="avalible23" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible23" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>24</th>
-					<th><input type="radio" name="avalible24" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible24" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>25</th>
-					<th><input type="radio" name="avalible25" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible25" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>26</th>
-					<th><input type="radio" name="avalible26" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible26" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>27</th>
-					<th><input type="radio" name="avalible27" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible27" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>28</th>
-					<th><input type="radio" name="avalible28" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible28" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>29</th>
-					<th><input type="radio" name="avalible29" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible29" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>30</th>
-					<th><input type="radio" name="avalible30" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible30" value="no"> No</th>
-				</tr>
-				<tr>
-					<th>31</th>
-					<th><input type="radio" name="avalible31" value="yes"> Yes</th>
-					<th><input type="radio" name="avalible31" value="no"> No</th>
-				</tr>
+			<table class= "avtable" id="tableApt">
+				
 			</table>
         </div>
-		
 
+    </div>
+	
+	<div id="confirmed" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="closecontainer">
+                <span onclick="document.getElementById('confirmed').style.display='none'"
+                      class="close" title="Close">&times;</span>
+            </div>
+            <div class="confirmedcontainer">
+				<label ><b id="thankyou">Thankyou for selecting the date(s).</b></label>
+                <div>
+                    <button class="action-button confirm-button" type="button" onclick="document.location.href = 'index.html'">Okay</button>
+                </div>
+
+            </div>
+        </form>
     </div>
 </body>
 
