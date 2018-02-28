@@ -124,7 +124,7 @@
                     var form = document.getElementById('car_form').cloneNode(true);
                     forms[card_num] = form;
                     var card = document.getElementsByClassName('car')[card_num];
-					newDiv.getElementsByClassName("car_discription")[0].innerHTML = "<h1 hidden>" + card_num + "/h1><h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
+					card.getElementsByClassName("car_discription")[0].innerHTML = "<h1 hidden>" + card_num + "</h1><h3>" + form.elements["make"].value + " " + form.elements["model"].value + "</h3><p>Year: " + form.elements["year"].value + "<br>Mileage: " + form.elements["mileage"].value;
                     document.getElementById('view_car').style.display='none';
 				}
                   

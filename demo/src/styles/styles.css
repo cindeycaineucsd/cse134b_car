@@ -1,0 +1,420 @@
+/* Styles */
+#app {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  min-width: 550px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+a.active {
+  color: orange;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.button {
+  transition-duration: 0.4s;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.space-40 {
+  padding: 40px;
+}
+
+nav {
+  background-color: #c8dd88;
+  position: fixed;
+  width: 100%;
+  padding: 12px 32px;
+  top: 0;
+}
+
+.action-button {
+  background-color: #4CAF50;
+  color: white;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.header-button {
+  float: right;  
+}
+
+.logo {
+  height: 32px;
+}
+
+.car {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 12px;
+  margin: 12px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.car_image {
+  max-width: 400px;
+  width: 94%;
+}
+
+.car_discription {
+  margin: 0 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.congratulations {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 12px;
+  margin: 12px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.congratulations_image {
+  max-width: 800px;
+  width: 100%;
+}
+
+.congratulations_message {
+  width: 100%;
+  margin: auto 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.negotiation {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 12px;
+  margin: 12px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.negotiation_message {
+  width: 100%;
+  margin: auto 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.negotiation_buttons {
+  margin: auto 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+
+input[type=radio] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+}
+
+.logincontainer {
+  padding: 16px;
+}
+
+.logincontainer-button {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(5,5,2);
+  background-color: rgba(5,5,2,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.carpopup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(5,5,2);
+  background-color: rgba(5,5,2,0.4);
+  padding-top: 60px;
+}
+
+.carpopup_imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.carpopup-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  margin: 5% auto 15% auto;
+  width: 80%;
+}
+
+.carpopup_detail {
+  margin: 5% auto 15% auto;
+  vertical-align: top;
+  display: inline-block;
+  width: 20%;
+}
+
+
+.closecontainer {
+  margin: 12px 0 12px 0;
+  position: relative;
+}
+
+.span .psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+  .close:hover,
+  .close:focus {
+      cursor: pointer;
+  }
+
+.animate {
+  animation: animatezoom 0.5s
+}
+
+.chatbox {
+  border: 2px solid #dedsede;
+  background-color: #fefefe;
+  padding: 8px 10px 45px 10px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  bottom: 0;
+  position: relative;
+}
+
+.chatboxinner{
+  height: 400px;
+  overflow: auto;
+}
+
+.chatentry {
+  border: 2px solid #dedede;
+  padding: 0;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.chatcontainer {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.chatcontainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+
+.chatentry input[type=text] {
+  padding: 6px;
+  margin-top: 5px;
+  font-size: 17px;
+  border: none;
+  box-shadow: none;
+}
+
+.chat-actions {
+  position: absolute;
+  right: 0;
+  padding-right: 5px;
+}
+
+/* sergey */
+.car_description_0 {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.car_description_1 {
+  margin: 0 20px 0 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.car_description_2 {
+  padding: 43px 0 0 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.car_description_3 {
+  margin: 0 190px 0 0;
+  vertical-align: top;
+  display: inline-block;
+  box-shadow: inset -10px 10px 8px -10px #CCC, inset 10px -10px 8px -10px #CCC;
+}
+
+.car_description_4 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.car_detail {
+  background-color: #fff;
+  max-width: 850px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.car_detailed {
+  max-width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+input[type=text] {
+  box-shadow: inset -10px 10px 8px -10px #CCC, inset 10px -10px 8px -10px #CCC;
+}
+
+.payment_main {
+  height: auto;
+  width: 970px;
+  margin: auto;
+}
+
+.payment_option {
+  background-color: #fefefe;
+  height: 800px;
+  margin: auto;
+  padding: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-size: 25px;
+  width: 320px;
+  vertical-align: top;
+  position: relative;
+}
+
+  .payment_option > h1 {
+      text-align: center;
+  }
+
+  .payment_option > h2 {
+      text-align: center;
+  }
+
+.confirm_button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+  .confirm_button > button {
+      float: none;
+      margin: auto;
+      display: block;
+  }
+
+.center {
+  text-align: center;
+}
+
+.dropdown {
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.car_description_padding {
+  padding: 20px;
+}
+
+@media screen and (max-width: 1250px) {
+  .car_detail {
+      max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .payment_option {
+      display: block;
+      margin: 20px auto;
+  }
+}
