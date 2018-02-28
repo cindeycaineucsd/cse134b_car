@@ -6,6 +6,7 @@ import AboutPage from './components/about/AboutPage';
 import CoursesPage from './components/course/CoursesPage';
 import ManageCoursePage from './components/course/ManageCoursePage'; //eslint-disable-line import/no-named-as-default
 import StartNegotiationPage from './components/startnegotiation/StartNegotiationPage';
+import BuyerAppointmentPage from './components/appointments/BuyerAppointmentPage';
 
 export default (
   <Route path="/" component={App}>
@@ -15,5 +16,6 @@ export default (
     <Route path="course/:id" component={ManageCoursePage} />
     <Route path="about" component={AboutPage} />
     <Route path="negotiation" component={StartNegotiationPage} />
+    <Route path="appointmentbuyer" component={BuyerAppointmentPage} />
   </Route>
 );
