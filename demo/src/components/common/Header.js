@@ -12,7 +12,6 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 class Login extends React.Component {
-  static muiName = 'FlatButton';
 
   render() {
     return (
@@ -36,30 +35,28 @@ const Logged = (props) => (
   </IconMenu>
 );
 
-Logged.muiName = 'IconMenu';
 
 class Header extends React.Component {
-  state = {
-    logged: true,
-  };
 
-  handleChange = (event, logged) => {
+  constructor(props, context){
+    super(props, context);
+    this.state = {
+      logged: true
+    };
+    
+    this.handleChange = this.handleChange.bind(this);
+
+  }
+
+  handleChange(event, logged){
     this.setState({logged: logged});
-  };
+  }
 
   render() {
     return (
       <div>
-        <Toggle
-          label="Logged"
-          defaultToggled={true}
-          onToggle={this.handleChange}
-          labelPosition="right"
-          style={{margin: 20}}
-        />
         <AppBar
-          title="Title"
-          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+          title="Car-2-Go"
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
         />
       </div>

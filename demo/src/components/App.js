@@ -5,14 +5,14 @@ import {connect} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const bodyStyle = {
-  marginTop: 100
+  marginTop: 0
 };
 
 class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="container-fluid">
+        <div className="container-fluid" style={{margin: 0, padding: 0}}>
           <Header
             loading={this.props.loading}
           />
