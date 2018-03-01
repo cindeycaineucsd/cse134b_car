@@ -4,6 +4,10 @@ import Header from './common/Header';
 import {connect} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+const bodyStyle = {
+  marginTop: 100
+};
+
 class App extends React.Component {
   render() {
     return (
@@ -12,7 +16,9 @@ class App extends React.Component {
           <Header
             loading={this.props.loading}
           />
+          <div style={bodyStyle}>
           {this.props.children}
+          </div>
         </div>
       </MuiThemeProvider>
     );
