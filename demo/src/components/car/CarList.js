@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
-import CourseListRow from './CourseListRow';
+import CarListRow from './CarListRow';
 
-const CourseList = ({courses}) => {
+const CarList = ({cars}) => {
   return (
     <table className="table">
       <thead>
@@ -14,16 +14,16 @@ const CourseList = ({courses}) => {
       </tr>
       </thead>
       <tbody>
-      {courses.map(course =>
-        <CourseListRow key={course.id} course={course}/>
+      {cars.map(car =>
+        <CarListRow key={car.id} car={car}/>
       )}
       </tbody>
     </table>
   );
 };
 
-CourseList.propTypes = {
-  courses: PropTypes.array.isRequired
+CarList.propTypes = {
+  cars: PropTypes.array.isRequired
 };
 
-export default CourseList;
+export default CarList;
