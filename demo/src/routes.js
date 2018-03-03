@@ -8,6 +8,7 @@ import ManageCarPage from './components/car/ManageCarPage'; //eslint-disable-lin
 import StartNegotiationPage from './components/startnegotiation/StartNegotiationPage';
 import BuyerAppointmentPage from './components/appointments/BuyerAppointmentPage';
 import SellerAppointmentPage from './components/appointments/SellerAppointmentPage';
+import BuyerInquiriesPage from './components/buyerinquiries/BuyerInquiriesPage';
 
 export default (
   <Route path="/" component={App}>
@@ -19,5 +20,6 @@ export default (
     <Route path="negotiation" component={StartNegotiationPage} />
     <Route path="appointmentbuyer" component={BuyerAppointmentPage} />
     <Route path="appointmentseller" component={SellerAppointmentPage} />
+    <Route path="inquiries" component={BuyerInquiriesPage} />
   </Route>
 );
