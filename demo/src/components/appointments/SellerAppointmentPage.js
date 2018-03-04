@@ -3,6 +3,9 @@ import {Link} from 'react-router';
 import DatePicker from 'material-ui/DatePicker';
 import FlatButton from 'material-ui/FlatButton';
 
+const simplecardstyle = {
+  width: "75%", margin: "0px auto", minWidth: "200px", maxWidth: "750px"
+};
 
 function disableRandomDates() {
     return Math.random() > 0.4;
@@ -30,7 +33,7 @@ class SellerAppointmentPage extends React.Component {
     let curDates = this.state.controlledDate;
 
     return (
-      <div className = "appointments">
+      <div className = "appointments" style= {simplecardstyle}>
         <h1>Appointments</h1>
         <p>Please pick an avaliable date for an appointment.</p>
 

@@ -3,6 +3,19 @@ import {Link} from 'react-router';
 import DatePicker from 'material-ui/DatePicker';
 import FlatButton from 'material-ui/FlatButton';
 
+const fullpaperstyle = {
+  width: "100%",
+  minWidth: "250px",
+  height: "100%",
+  paddingTop: "100px",
+  backgroundColor: "#EFEFEF",
+  margin: "0px auto"
+};
+
+const simplecardstyle = {
+  width: "75%", margin: "0px auto", minWidth: "200px", maxWidth: "750px"
+};
+
 class BuyerAppointmentPage extends React.Component {
   constructor(props, context){
     super(props, context);
@@ -27,10 +40,10 @@ class BuyerAppointmentPage extends React.Component {
 
   render() {
     return (
-      <div className = "Appointments">
+      <div className = "Appointments" style={simplecardstyle}>
         <h1>Appointments</h1>
         <p>Please select your avaliable dates for an appointment.</p>
-
+        
         <DatePicker
         hintText="Choose Date"
         value={this.state.controlledDate}

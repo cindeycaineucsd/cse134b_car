@@ -26,7 +26,7 @@ const CardExampleWithAvatar = () => (
       <Link to="/chat">        
       <RaisedButton label="Yes" primary="true"/>
       </Link>
-      <Link to="/about">
+      <Link to="/">
       <RaisedButton label="No" primary="true"/>
       </Link>
     </CardActions>

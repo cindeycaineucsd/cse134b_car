@@ -176,7 +176,7 @@ class Header extends React.Component {
     return (
       <div>
         <AppBar
-          title={<Link to="/about" style={titleStyle}>Car-2-Go</Link>}
+          title={<Link to="/" style={titleStyle}>Car-2-Go</Link>}
           iconElementRight={this.state.logged ? <Logged /> : <LogSign />}
         />
       </div>
