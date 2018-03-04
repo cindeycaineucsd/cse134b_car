@@ -3,11 +3,11 @@ import delay from './delay';
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
-const courses = [
+const cars = [
   {
     id: "react-creating-reusable-components",
     title: "Creating Reusable React Components",
-    watchHref: "http://pluralsight.com/courses/react-creating-reusable-components",
+    watchHref: "http://pluralsight.com/cars/react-creating-reusable-components",
     authorId: "cory-house",
     length: "6:20",
     category: "JavaScript"
@@ -15,7 +15,7 @@ const courses = [
   {
     id: "react-flux-building-applications",
     title: "Building Applications in React and Flux",
-    watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
+    watchHref: "http://www.pluralsight.com/cars/react-flux-building-applications",
     authorId: "cory-house",
     length: "5:08",
     category: "JavaScript"
@@ -23,7 +23,7 @@ const courses = [
   {
     id: "clean-code",
     title: "Clean Code: Writing Code for Humans",
-    watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
+    watchHref: "http://www.pluralsight.com/cars/writing-clean-code-humans",
     authorId: "cory-house",
     length: "3:10",
     category: "Software Practices"
@@ -31,7 +31,7 @@ const courses = [
   {
     id: "architecture",
     title: "Architecting Applications for the Real World",
-    watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
+    watchHref: "http://www.pluralsight.com/cars/architecting-applications-dotnet",
     authorId: "cory-house",
     length: "2:52",
     category: "Software Architecture"
@@ -39,7 +39,7 @@ const courses = [
   {
     id: "career-reboot-for-developer-mind",
     title: "Becoming an Outlier: Reprogramming the Developer Mind",
-    watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
+    watchHref: "http://www.pluralsight.com/cars/career-reboot-for-developer-mind",
     authorId: "cory-house",
     length: "2:30",
     category: "Career"
@@ -47,7 +47,7 @@ const courses = [
   {
     id: "web-components-shadow-dom",
     title: "Web Component Fundamentals",
-    watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
+    watchHref: "http://www.pluralsight.com/cars/web-components-shadow-dom",
     authorId: "cory-house",
     length: "5:10",
     category: "HTML5"
@@ -59,57 +59,57 @@ function replaceAll(str, find, replace) {
 }
 
 //This would be performed on the server in a real app. Just stubbing in.
-const generateId = (course) => {
-  return replaceAll(course.title, ' ', '-');
+const generateId = (car) => {
+  return replaceAll(car.title, ' ', '-');
 };
 
-class CourseApi {
-  static getAllCourses() {
+class CarApi {
+  static getAllCars() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], courses));
+        resolve(Object.assign([], cars));
       }, delay);
     });
   }
 
-  static saveCourse(course) {
-    course = Object.assign({}, course); // to avoid manipulating object passed in.
+  static saveCar(car) {
+    car = Object.assign({}, car); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
-        const minCourseTitleLength = 1;
-        if (course.title.length < minCourseTitleLength) {
-          reject(`Title must be at least ${minCourseTitleLength} characters.`);
+        const minCarTitleLength = 1;
+        if (car.title.length < minCarTitleLength) {
+          reject(`Title must be at least ${minCarTitleLength} characters.`);
         }
 
-        if (course.id) {
-          const existingCourseIndex = courses.findIndex(a => a.id == course.id);
-          courses.splice(existingCourseIndex, 1, course);
+        if (car.id) {
+          const existingCarIndex = cars.findIndex(a => a.id == car.id);
+          cars.splice(existingCarIndex, 1, car);
         } else {
           //Just simulating creation here.
-          //The server would generate ids and watchHref's for new courses in a real app.
+          //The server would generate ids and watchHref's for new cars in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
-          course.id = generateId(course);
-          course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
-          courses.push(course);
+          car.id = generateId(car);
+          car.watchHref = `http://www.pluralsight.com/cars/${car.id}`;
+          cars.push(car);
         }
 
-        resolve(course);
+        resolve(car);
       }, delay);
     });
   }
 
-  static deleteCourse(courseId) {
+  static deleteCar(carId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const indexOfCourseToDelete = courses.findIndex(course => {
-          return course.courseId == courseId;
+        const indexOfCarToDelete = cars.findIndex(car => {
+          return car.carId == carId;
         });
-        courses.splice(indexOfCourseToDelete, 1);
+        cars.splice(indexOfCarToDelete, 1);
         resolve();
       }, delay);
     });
   }
 }
 
-export default CourseApi;
+export default CarApi;
