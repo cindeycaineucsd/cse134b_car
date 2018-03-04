@@ -4,15 +4,13 @@ import {bindActionCreators} from 'redux';
 import * as carActions from '../../actions/carActions';
 import CarList from './CarList';
 import {browserHistory} from 'react-router';
-
+const mainstyle = {
+  textAlign: 'center' 
+};
 class CarsPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.redirectToAddCarPage = this.redirectToAddCarPage.bind(this);
-  }
-
-  carRow(car, index) {
-    return <div key={index}>{car.title}</div>;
   }
 
   redirectToAddCarPage() {
@@ -21,9 +19,10 @@ class CarsPage extends React.Component {
 
   render() {
     const {cars} = this.props;
+    console.log(cars);
 
     return (
-      <div>
+      <div style={mainstyle}>
         <h1>Cars</h1>
         <input type="submit"
                value="Add Car"

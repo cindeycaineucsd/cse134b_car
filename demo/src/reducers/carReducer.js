@@ -11,6 +11,12 @@ export default function carReducer(state = initialState.cars, action) {
         ...state,
         Object.assign({}, action.car)
       ];
+    
+    case types.DELETE_CAR_SUCCESS:
+      return [
+        ...state,
+        Object.assign({}, action.car)
+      ];
 
     case types.UPDATE_CAR_SUCCESS:
       return [
