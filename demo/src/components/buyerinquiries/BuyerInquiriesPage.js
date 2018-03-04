@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import LinearProgress from 'material-ui/LinearProgress';
 
 class BuyerInquiriesPage extends React.Component {
 
@@ -14,6 +14,7 @@ class BuyerInquiriesPage extends React.Component {
           key: 1,
           name: 'RAV4',
           status: 'Interested',
+          completed: 20,
           picture:'https://www.coughlintoyota.com/assets/stock/colormatched_01/white/640/cc_2017tos110005_01_640/cc_2017tos110005_01_640_1g3.jpg'
 
         },
@@ -21,12 +22,14 @@ class BuyerInquiriesPage extends React.Component {
           key: 2,
           name: 'Prius',
           status: 'Negotiating',
+          completed: 50,
           picture: 'https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/1.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff'
         },
         {
           key: 3,
           name: 'Malibu',
           status: 'Select Payment',
+          completed: 80,
           picture: 'https://media.ed.edmunds-media.com/chevrolet/malibu/2014/oem/2014_chevrolet_malibu_sedan_ltz_fq_oem_2_1280.jpg'
         }
       ]
@@ -81,6 +84,8 @@ class Car extends React.Component {
           actAsExpander={true}
           showExpandableButton={true}
         />
+        <LinearProgress mode="determinate" value={this.props.componentData.completed}
+          style={{"width":"50%"}} />
         <CardMedia
           expandable={true}
         > 

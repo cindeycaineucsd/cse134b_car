@@ -1,5 +1,8 @@
 import React from 'react';
-import Calendar from 'material-ui/DatePicker/Calendar';
+import {Link} from 'react-router';
+import DatePicker from 'material-ui/DatePicker';
+import FlatButton from 'material-ui/FlatButton';
+
 
 function disableRandomDates() {
     return Math.random() > 0.4;
@@ -9,8 +12,7 @@ class SellerAppointmentPage extends React.Component {
   constructor(props, context){
     super(props, context);
     this.state = {
-      controlledDate: null,
-      appointmentDate: []
+      controlledDate: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,8 +20,7 @@ class SellerAppointmentPage extends React.Component {
 
   handleChange(event, date) {
     this.setState({
-      controlledDate: date,
-      appointmentDate: [1]
+      controlledDate: date
     });
   }
 
@@ -33,15 +34,23 @@ class SellerAppointmentPage extends React.Component {
         <h1>Appointments</h1>
         <p>Please pick an avaliable date for an appointment.</p>
 
-        <Calendar firstDayOfWeek={1}
-          value={this.state.controlledDate}
-          onChange={this.handleChange}
+        <DatePicker
+        hintText="Pick Appointment Date"
+        value={this.state.controlledDate}
+        onChange={this.handleChange}
+        shouldDisableDate={disableRandomDates}
         />
-        <div>
-          <h2>Current Appointment Date</h2>
-          <p>This should be dates</p>
-        </div>
 
+        <div>
+          <h3>Current Appointment Date</h3>
+          <p>Current Choice</p>
+          {Intl.DateTimeFormat('en-GB', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: '2-digit' 
+          }).format(this.state.controlledDate)}
+        </div>
+        <Link to="inquiries"><FlatButton label="Confirm" primary={true}/></Link>
       </div>
     );
   }
