@@ -48,6 +48,7 @@ class LogSign extends React.Component {
 
   handleLoginSubmit(){
     this.setState({loginOpen: false});
+    this.props.setLogIn(true);
   }
 
   handleSignUpOpen(){
@@ -60,6 +61,7 @@ class LogSign extends React.Component {
 
   handleSignUpSubmit(){
     this.setState({signupOpen: false});
+    this.props.setLogIn(true);
   }
 
   render() {
@@ -137,6 +139,28 @@ class LogSign extends React.Component {
   }
 }
 
+class LogOut extends React.Component {
+  constructor(props, context){
+    super(props, context);
+
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  handleClick(){
+    this.props.setLogIn(false);
+  }
+
+
+    render() {
+      return(
+        <div>
+                  <FlatButton {...this.props} label="Log Out" secondary="true" style={logsignstyle} onClick={this.handleClick}/>
+        </div>
+        )
+    }
+}
+
 const Logged = (props) => (
   <IconMenu
     {...props}
@@ -165,10 +189,15 @@ class Header extends React.Component {
     };
     
     this.handleChange = this.handleChange.bind(this);
+    this.setLogIn = this.setLogIn.bind(this);
 
   }
 
   handleChange(event, logged){
+    this.setState({logged: logged});
+  }
+
+  setLogIn(logged){
     this.setState({logged: logged});
   }
 
@@ -177,7 +206,7 @@ class Header extends React.Component {
       <div>
         <AppBar
           title={<Link to="/about" style={titleStyle}>Car-2-Go</Link>}
-          iconElementRight={this.state.logged ? <Logged /> : <LogSign />}
+          iconElementRight={this.state.logged ? <LogOut setLogIn={this.setLogIn}/> : <LogSign setLogIn={this.setLogIn}/>}
         />
       </div>
     );
