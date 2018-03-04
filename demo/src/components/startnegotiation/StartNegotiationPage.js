@@ -15,7 +15,7 @@ const fullpaperstyle = {
 
 const simplecardstyle = {
   width: "75%", margin: "0px auto", minWidth: "200px", maxWidth: "750px"
-}
+};
 
 const CardExampleWithAvatar = () => (
   <Card style={simplecardstyle}>

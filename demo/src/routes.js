@@ -9,6 +9,7 @@ import StartNegotiationPage from './components/startnegotiation/StartNegotiation
 import BuyerAppointmentPage from './components/appointments/BuyerAppointmentPage';
 import SellerAppointmentPage from './components/appointments/SellerAppointmentPage';
 import BuyerInquiriesPage from './components/buyerinquiries/BuyerInquiriesPage';
+import PaymentOptionsPage from './components/paymentoptions/PaymentOptionsPage';
 
 export default (
   <Route path="/" component={App}>
@@ -21,5 +22,6 @@ export default (
     <Route path="appointmentbuyer" component={BuyerAppointmentPage} />
     <Route path="appointmentseller" component={SellerAppointmentPage} />
     <Route path="inquiries" component={BuyerInquiriesPage} />
+    <Route path="paymentoptions" component={PaymentOptionsPage} />
   </Route>
 );

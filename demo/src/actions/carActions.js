@@ -14,6 +14,10 @@ export function updateCarSuccess(car) {
   return {type: types.UPDATE_CAR_SUCCESS, car};
 }
 
+export function deleteCarSuccess(car) {
+  return {type: types.DELETE_CAR_SUCCESS, car};
+}
+
 export function loadCars() {
   return function(dispatch) {
     dispatch(beginAjaxCall());
@@ -31,6 +35,18 @@ export function saveCar(car) {
     return carApi.saveCar(car).then(car => {
       car.id ? dispatch(updateCarSuccess(car)) :
         dispatch(createCarSuccess(car));
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      throw(error);
+    });
+  };
+}
+
+export function deleteCar(car) {
+  return function (dispatch, getState) {
+    dispatch(beginAjaxCall());
+    return carApi.deleteCar(car).then(car => {
+      dispatch(deleteCarSuccess(car));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);

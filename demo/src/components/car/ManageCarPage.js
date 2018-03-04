@@ -18,6 +18,7 @@ export class ManageCarPage extends React.Component {
 
     this.updateCarState = this.updateCarState.bind(this);
     this.saveCar = this.saveCar.bind(this);
+    this.deleteCar = this.deleteCar.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,12 +38,12 @@ export class ManageCarPage extends React.Component {
   carFormIsValid() {
     let formIsValid = true;
     let errors = {};
-
+    /*
     if (this.state.car.title.length < 5) {
       errors.title = 'Title must be at least 5 characters.';
       formIsValid = false;
     }
-
+    */
     this.setState({errors: errors});
     return formIsValid;
   }
@@ -50,7 +51,7 @@ export class ManageCarPage extends React.Component {
 
   saveCar(event) {
     event.preventDefault();
-
+    
     if (!this.carFormIsValid()) {
       return;
     }
@@ -65,9 +66,34 @@ export class ManageCarPage extends React.Component {
       });
   }
 
+  deleteCar(event) {
+    event.preventDefault();
+
+    /*
+    if (!this.carFormIsValid()) {
+      return;
+    }
+    */
+
+    this.setState({saving: true});
+
+    this.props.actions.deleteCar(this.state.car)
+      .then(() => this.redirectdelete())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({saving: false});
+      });
+  }
+
   redirect() {
     this.setState({saving: false});
-    toastr.success('Car saved');
+    toastr.success('Car Saved');
+    this.context.router.push('/cars');
+  }
+
+  redirectdelete() {
+    this.setState({saving: false});
+    toastr.success('Car Deleted');
     this.context.router.push('/cars');
   }
 
@@ -77,6 +103,7 @@ export class ManageCarPage extends React.Component {
         allAuthors={this.props.authors}
         onChange={this.updateCarState}
         onSave={this.saveCar}
+        onDelete={this.deleteCar}
         car={this.state.car}
         errors={this.state.errors}
         saving={this.state.saving}
@@ -105,7 +132,7 @@ function getCarById(cars, id) {
 function mapStateToProps(state, ownProps) {
   const carId = ownProps.params.id; // from the path `/car/:id`
 
-  let car = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
+  let car = {id: '', watchHref: '', make: '', model: '', year: '', mileage: '', transmission: '', color: '', titlestatus: '', price: ''};
 
   if (carId && state.cars.length > 0) {
     car = getCarById(state.cars, carId);

@@ -1,15 +1,25 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
+
 const CarListRow = ({car}) => {
   return (
-    <tr>
-      <td><a href={car.watchHref} target="_blank">Watch</a></td>
-      <td><Link to={'/car/' + car.id}>{car.title}</Link></td>
-      <td>{car.authorId}</td>
-      <td>{car.category}</td>
-      <td>{car.length}</td>
-    </tr>
+    <div className="car"> 
+        <img className="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius" /> 
+    <Link to={'/car/' + car.id}> 
+    <div className="car_discription"> 
+    <h3>{car.make + " " + car.model}</h3> 
+    <p> 
+    Year: {car.year}<br /> 
+    Mileage: {car.mileage} 
+    </p> 
+    </div> 
+    <div className="info"> 
+    <button className="action-button car-button" type="button">Details</button> 
+    </div>
+    </Link> 
+    </div>
+
   );
 };
 

@@ -5,53 +5,29 @@ import delay from './delay';
 // All calls return promises.
 const cars = [
   {
-    id: "react-creating-reusable-components",
-    title: "Creating Reusable React Components",
-    watchHref: "http://pluralsight.com/cars/react-creating-reusable-components",
-    authorId: "cory-house",
-    length: "6:20",
-    category: "JavaScript"
+    id: 'car1', 
+    watchHref: '', 
+    make: 'Toyota', 
+    model: 'Prius', 
+    year: '2005', 
+    mileage: '120,000', 
+    transmission: 'Automatic', 
+    color: 'Red', 
+    titlestatus: 'Clean', 
+    price: '$18,000'
   },
   {
-    id: "react-flux-building-applications",
-    title: "Building Applications in React and Flux",
-    watchHref: "http://www.pluralsight.com/cars/react-flux-building-applications",
-    authorId: "cory-house",
-    length: "5:08",
-    category: "JavaScript"
+    id: 'car2', 
+    watchHref: '', 
+    make: 'Honda', 
+    model: 'Civic', 
+    year: '2010', 
+    mileage: '80,000', 
+    transmission: 'Automatic', 
+    color: 'Red', 
+    titlestatus: 'Clean', 
+    price: '$18,000'
   },
-  {
-    id: "clean-code",
-    title: "Clean Code: Writing Code for Humans",
-    watchHref: "http://www.pluralsight.com/cars/writing-clean-code-humans",
-    authorId: "cory-house",
-    length: "3:10",
-    category: "Software Practices"
-  },
-  {
-    id: "architecture",
-    title: "Architecting Applications for the Real World",
-    watchHref: "http://www.pluralsight.com/cars/architecting-applications-dotnet",
-    authorId: "cory-house",
-    length: "2:52",
-    category: "Software Architecture"
-  },
-  {
-    id: "career-reboot-for-developer-mind",
-    title: "Becoming an Outlier: Reprogramming the Developer Mind",
-    watchHref: "http://www.pluralsight.com/cars/career-reboot-for-developer-mind",
-    authorId: "cory-house",
-    length: "2:30",
-    category: "Career"
-  },
-  {
-    id: "web-components-shadow-dom",
-    title: "Web Component Fundamentals",
-    watchHref: "http://www.pluralsight.com/cars/web-components-shadow-dom",
-    authorId: "cory-house",
-    length: "5:10",
-    category: "HTML5"
-  }
 ];
 
 function replaceAll(str, find, replace) {
@@ -60,7 +36,7 @@ function replaceAll(str, find, replace) {
 
 //This would be performed on the server in a real app. Just stubbing in.
 const generateId = (car) => {
-  return replaceAll(car.title, ' ', '-');
+  return replaceAll(car.make + ' ' + car.model + ' ' + car.year + ' ' + Math.floor(Math.random() * 100000) , ' ', '-');
 };
 
 class CarApi {
@@ -78,9 +54,11 @@ class CarApi {
       setTimeout(() => {
         // Simulate server-side validation
         const minCarTitleLength = 1;
+        /*
         if (car.title.length < minCarTitleLength) {
           reject(`Title must be at least ${minCarTitleLength} characters.`);
         }
+        */
 
         if (car.id) {
           const existingCarIndex = cars.findIndex(a => a.id == car.id);
@@ -99,13 +77,17 @@ class CarApi {
     });
   }
 
-  static deleteCar(carId) {
+  static deleteCar(car) {
+    var carId = car.id;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfCarToDelete = cars.findIndex(car => {
-          return car.carId == carId;
+          console.log(car.id + ' ' + carId);
+          return car.id == carId;
         });
+        console.log(indexOfCarToDelete);
         cars.splice(indexOfCarToDelete, 1);
+        console.log(cars);
         resolve();
       }, delay);
     });
