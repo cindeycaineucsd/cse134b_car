@@ -3,6 +3,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import {Link} from 'react-router';
 
 const fullpaperstyle = {
   width: "100%",
@@ -14,15 +15,20 @@ const fullpaperstyle = {
 };
 
 const simplecardstyle = {
-  width: "75%", margin: "0px auto", minWidth: "200px", maxWidth: "750px"
-}
+  width: "75%", margin: "0px auto", minWidth: "200px", maxWidth: "750px",
+  textAlign: "center", display: "flex"
+};
 
 const CardExampleWithAvatar = () => (
   <Card style={simplecardstyle}>
     <CardTitle title="Start Negotiation?"/>
     <CardActions>
+      <Link to="/chat">        
       <RaisedButton label="Yes" primary="true"/>
+      </Link>
+      <Link to="/about">
       <RaisedButton label="No" primary="true"/>
+      </Link>
     </CardActions>
   </Card>
 );

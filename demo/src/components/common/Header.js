@@ -17,6 +17,10 @@ const logsignstyle = {
   marginTop: 5, color: '#FFFFFF'
 };
 
+const titleStyle ={
+  textDecoration: "none", color: "white"
+}
+
 class LogSign extends React.Component {
   constructor(props, context){
     super(props, context);
@@ -148,6 +152,9 @@ const Logged = (props) => (
   </IconMenu>
 );
 
+class titleLink extends React.Component {
+
+}
 
 class Header extends React.Component {
 
@@ -169,7 +176,7 @@ class Header extends React.Component {
     return (
       <div>
         <AppBar
-          title="Car-2-Go"
+          title={<Link to="/about" style={titleStyle}>Car-2-Go</Link>}
           iconElementRight={this.state.logged ? <Logged /> : <LogSign />}
         />
       </div>
