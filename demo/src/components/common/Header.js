@@ -71,12 +71,14 @@ class LogSign extends React.Component {
           primary={true}
           onClick={this.handleLoginClose}
         />,
+        <Link to="/inquiries">
         <FlatButton
           label="Submit"
           primary={true}
           keyboardFocused={true}
           onClick={this.handleLoginSubmit}
         />
+        </Link>
       ];
 
       const signupActions = [
@@ -85,12 +87,14 @@ class LogSign extends React.Component {
           primary={true}
           onClick={this.handleSignUpClose}
         />,
+        <Link to="/inquiries">
         <FlatButton
           label="Submit"
           primary={true}
           keyboardFocused={true}
           onClick={this.handleSignUpSubmit}
         />
+        </Link>
       ];
 
     return (
@@ -155,29 +159,12 @@ class LogOut extends React.Component {
     render() {
       return(
         <div>
+                <Link to="/index">
                   <FlatButton {...this.props} label="Log Out" secondary="true" style={logsignstyle} onClick={this.handleClick}/>
+                  </Link>
         </div>
         )
     }
-}
-
-const Logged = (props) => (
-  <IconMenu
-    {...props}
-    iconButtonElement={
-      <IconButton><MoreVertIcon /></IconButton>
-    }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-  >
-    <MenuItem primaryText="Refresh" />
-    <MenuItem primaryText="Help" />
-    <MenuItem primaryText="Sign out" />
-  </IconMenu>
-);
-
-class titleLink extends React.Component {
-
 }
 
 class Header extends React.Component {
@@ -213,48 +200,5 @@ class Header extends React.Component {
   }
 }
 
-/*
-export class Header extends React.Component {
-  constructor(props, context){
-    super(props, context);
-    this.state = {
-      dataSource: []
-    };
-
-    this.handleUpdateInput = this.handleUpdateInput.bind(this);
-  }
-
-  handleUpdateInput(value) {
-    this.setState({
-      dataSource: [
-        value
-      ]
-    });
-  }
-
-  render() {
-    return (
-      <nav>
-        <IndexLink to="/" activeClassName="active">
-         <img className="logo" src="https://preview.ibb.co/jFWcJH/car_logo.png" alt="logo"></img>
-        </IndexLink>
-
-        <AutoComplete
-          hintText="Type anything"
-          dataSource={this.state.dataSource}
-          onUpdateInput={this.handleUpdateInput}
-        />
-
-        <button className="action-button header-button">
-              Login
-        </button>
-        <button className="action-button header-button">
-              Sign Up
-        </button>     
-      </nav>
-    );
-  }
-}
-*/
 
 export default Header;
