@@ -50,7 +50,9 @@ class PaymentOptionsPage extends React.Component {
                 Price: $18,000 
             </div>
             <div style={buttonboxstyle}>
+                <Link to="/">
                 <RaisedButton label="Confirm" style={buttonstyle} backgroundColor="#00BCD4" />
+                </Link>
             </div>
         </Card>
         <Card style={cardstyle}>
@@ -75,7 +77,9 @@ class PaymentOptionsPage extends React.Component {
                 </DropDownMenu>
             </div>
             <div style={buttonboxstyle}>
+                <Link to="/">
                 <RaisedButton label="Confirm" style={buttonstyle} backgroundColor="#00BCD4" />
+                </Link>
             </div>        
         </Card>
         <Card style={cardstyle}>
@@ -85,7 +89,9 @@ class PaymentOptionsPage extends React.Component {
                 Price: $18,000 
             </div>
             <div style={buttonboxstyle}>
+                <Link to="/">
                 <RaisedButton label="Confirm" style={buttonstyle} backgroundColor="#00BCD4" />
+                </Link>
             </div>
         </Card>
     </div>

@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import CarForm from './CarForm';
+import BuyerAppointmentPage from './BuyerAppointmentPage';
 
 function setup(saving) {
   let props = {
@@ -11,7 +11,7 @@ function setup(saving) {
   };
 
   let renderer = TestUtils.createRenderer();
-  renderer.render(<CarForm {...props}/>);
+  renderer.render(<BuyerAppointmentPage {...props}/>);
   let output = renderer.getRenderOutput();
 
   return {
@@ -21,10 +21,10 @@ function setup(saving) {
   };
 }
 
-describe('CarForm via React Test Utils', () => {
-  it('renders form and h1', () => {
+describe('BuyerAppointmentPage via React Test Utils', () => {
+  it('renders div and h1', () => {
     const { output } = setup();
-    expect(output.type).toBe('form');
+    expect(output.type).toBe('div');
     let [ h1 ] = output.props.children;
     expect(h1.type).toBe('h1');
   });

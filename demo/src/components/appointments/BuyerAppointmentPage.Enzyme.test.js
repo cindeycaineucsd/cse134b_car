@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import {mount, shallow} from 'enzyme';
 import TestUtils from 'react-addons-test-utils';
-import CarForm from './CarForm';
+import BuyerAppointmentPage from './BuyerAppointmentPage';
 
 function setup(saving) {
   const props = {
@@ -11,14 +11,14 @@ function setup(saving) {
     onChange: () => {}
   };
 
-  return shallow(<CarForm {...props} />);
+  return shallow(<BuyerAppointmentPage {...props} />);
 }
 
-describe('CarForm via Enzyme', () => {
-  it('renders form and h1', () => {
+describe('BuyerAppointmentPage via Enzyme', () => {
+  it('renders div and h1', () => {
     const wrapper = setup(false);
-    expect(wrapper.find('form').length).toBe(1);
-    expect(wrapper.find('h1').text()).toEqual('Manage Car');
+    expect(wrapper.find('div').length).toBe(2);
+    expect(wrapper.find('h1').text()).toEqual('Appointments');
   });
 
 });

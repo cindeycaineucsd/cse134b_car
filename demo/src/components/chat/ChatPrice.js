@@ -47,7 +47,7 @@ class ChatPrice extends React.Component {
           <div style={buyerPriceStyle}>
             <h4>{"$" + this.props.price}</h4>
             <div style={buttonContainerStyle}>   
-                <Link to="/about">       
+                <Link to="/paymentoptions">       
                     <FlatButton label="Yes" default="true" style={priceButtonsStyle}/>
                 </Link>
                 <FlatButton label="No" default="true" style={priceButtonsStyle} onClick={() => this.props.onDecline()}/>

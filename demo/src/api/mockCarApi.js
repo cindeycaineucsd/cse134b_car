@@ -27,7 +27,7 @@ const cars = [
     color: 'Red', 
     titlestatus: 'Clean', 
     price: '$18,000'
-  },
+  }
 ];
 
 function replaceAll(str, find, replace) {
@@ -88,7 +88,8 @@ class CarApi {
         console.log(indexOfCarToDelete);
         cars.splice(indexOfCarToDelete, 1);
         console.log(cars);
-        resolve();
+        resolve(cars);
+        resolve(car);
       }, delay);
     });
   }
