@@ -14,7 +14,8 @@ const cars = [
     transmission: 'Automatic', 
     color: 'Red', 
     titlestatus: 'Clean', 
-    price: '$18,000'
+    price: '$18,000',
+    picture: 'https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff'
   },
   {
     id: 'car2', 
@@ -26,7 +27,21 @@ const cars = [
     transmission: 'Automatic', 
     color: 'Red', 
     titlestatus: 'Clean', 
-    price: '$18,000'
+    price: '$18,000',
+    picture: 'https://s2.paultan.org/image/2017/11/Honda-Civic-Red-thailand-1-630x313.jpg'
+  },
+  {
+    id: 'car3', 
+    watchHref: '', 
+    make: 'Toyota', 
+    model: 'RAV4', 
+    year: '2012', 
+    mileage: '70,000', 
+    transmission: 'Automatic', 
+    color: 'Black', 
+    titlestatus: 'Clean', 
+    price: '$16,000',
+    picture: 'https://www.coughlintoyota.com/assets/stock/colormatched_01/white/640/cc_2017tos110005_01_640/cc_2017tos110005_01_640_1g3.jpg'
   }
 ];
 
@@ -78,6 +93,7 @@ class CarApi {
   }
 
   static deleteCar(car) {
+    
     var carId = car.id;
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -87,11 +103,11 @@ class CarApi {
         });
         console.log(indexOfCarToDelete);
         cars.splice(indexOfCarToDelete, 1);
-        console.log(cars);
-        resolve(cars);
+        console.log(car);
+        //resolve(cars);
         resolve(car);
       }, delay);
-    });
+    }); 
   }
 }
 

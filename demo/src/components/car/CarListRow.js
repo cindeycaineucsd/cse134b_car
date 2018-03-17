@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 const CarListRow = ({car}) => {
   return (
     <div className="car"> 
-        <img className="car_image" src="https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2018/prius/3T7/4.png?q=85&fm=jpg&w=1024&fit=max&cs=strip&bg=fff" alt="prius" /> 
+        <img className="car_image" src={car.picture} /> 
     <Link to={'/car/' + car.id}> 
     <div className="car_discription"> 
     <h3>{car.make + " " + car.model}</h3> 

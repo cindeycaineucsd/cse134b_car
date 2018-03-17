@@ -10,6 +10,7 @@ import ChatRow from '../chat/ChatRow';
 import ChatPrice from '../chat/ChatPrice';
 import TextInput from '../common/TextInput';
 import Dialog from 'material-ui/Dialog';
+import styles from './chat.module.css';
 
 const greyBackground = {
     backgroundColor: "#efefef"
@@ -27,13 +28,13 @@ const chatboxOuterStyle = {
     position: "relative",
     z: 1
 };
-
+/*
 const chatboxDisplayStyle = {
     height: "400px",
     overflow: "auto",
     border: "1px solid #efefef"
 };
-
+*/
 const chatboxLowerStyle = {
     display: "flex",
     height: 32,
@@ -120,7 +121,7 @@ class Chat extends React.Component {
         return (
             <div style={greyBackground}>
                 <Card style={chatboxOuterStyle}>
-                    <div style={chatboxDisplayStyle}>
+                    <div className={styles.root}>
                         {this.state.customerChats.map((chat, index) => {
                             if (chat.type === 'price') {
                                 const removeChat = () => {

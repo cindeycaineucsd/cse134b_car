@@ -68,13 +68,11 @@ export class ManageCarPage extends React.Component {
 
   deleteCar(event) {
     event.preventDefault();
-
-    /*
+    
     if (!this.carFormIsValid()) {
       return;
     }
-    */
-
+    
     this.setState({saving: true});
 
     this.props.actions.deleteCar(this.state.car)
@@ -132,7 +130,7 @@ function getCarById(cars, id) {
 function mapStateToProps(state, ownProps) {
   const carId = ownProps.params.id; // from the path `/car/:id`
 
-  let car = {id: '', watchHref: '', make: '', model: '', year: '', mileage: '', transmission: '', color: '', titlestatus: '', price: ''};
+  let car = {id: '', watchHref: '', make: '', model: '', year: '', mileage: '', transmission: '', color: '', titlestatus: '', price: '', picture: ''};
 
   if (carId && state.cars.length > 0) {
     car = getCarById(state.cars, carId);
